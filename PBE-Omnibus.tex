@@ -1,0 +1,197 @@
+% $Author: mars $
+% $Date: 2009-09-25 12:30:59 -0300 (Sex, 25 Set 2009) $
+% $Revision: 29287 $
+
+% HISTORY:
+% 2009-04-23 - Oscar set up new pharo omnibus
+
+%=================================================================
+% This is the main file for the Pharo By Example Omnibus.
+% The individual chapters can also be latexed by themselves.
+%=================================================================
+\documentclass[a4paper,10pt,twoside]{book}
+\usepackage[
+	papersize={6.13in,9.21in},
+	hmargin={.75in,.75in},
+	vmargin={.75in,1in},
+	ignoreheadfoot
+]{geometry}
+\input{common.tex}
+\setboolean{lulu}{true}
+%=================================================================
+% A4
+%\documentclass[a4paper,11pt,twoside]{book}
+%\input{common.tex}
+%\usepackage{a4wide}
+%=================================================================
+% Add the path for the figures of each chapter here:
+\graphicspath{
+	{figures/}
+	% BOOK 1
+	{BasicClasses/figures/}
+	{Collections/figures/}
+	{Environment/figures/}
+	{FirstApp/figures/}
+	{Messages/figures/}
+	{Metaclasses/figures/}
+	{Model/figures/}
+	{Morphic/figures/}
+	{Preface/figures/}
+	{Profiling/figures/}
+	{QuickTour/figures/}
+	{SUnit/figures/}
+	{Streams/figures/}
+	{Syntax/figures/}
+    {FAQ/figures/}
+	% BOOK 2
+	% {Announcements/figures/}
+	{Compiler/figures/}
+	{Concurrency/figures/}
+	% {Debugging/figures/}
+	{Exceptions/figures/}
+	{Installer/figures/}
+	% {Magma/figures/}
+	{Reflection/figures/}
+	{Monticello/figures/}
+	{Omnibrowser/figures/}
+	{Profiling/figures/}
+	{Regex/figures/}
+	{Seaside/figures/}
+}
+%=================================================================
+\let\wholebook=\relax
+\makeindex
+\makeglossary
+%=================================================================
+\renewcommand{\nnbb}[2]{} % Disable editorial comments
+%=================================================================
+\begin{document}
+\frontmatter
+%=================================================================
+\setcounter{page}{1}
+\pagestyle{headings}
+%=================================================================
+\author{
+	 Alexandre Bergel\quad
+	Andrew P. Black\quad
+	St\'ephane Ducasse\\[1ex]
+	Oscar Nierstrasz\quad
+	Damien Pollet
+	\\[4ex]
+	with Damien Cassou and Marcus Denker}
+% (to be updated at the end)
+\title{\Huge\bf Pharo by Example\\ Omnibus edition}
+\isodate
+\date{\emph{Version of \today}}
+\maketitle
+%=================================================================
+~ % force the vfill
+\vfill
+\begin{footnotesize}
+\setlength{\parindent}{0pt}
+Este livro está disponível como download gratuito em \pbe.\\[1cm]
+
+Direitos autorais \copyright~2007, 2008, 2009 por Alexandre Bergel, Andrew P. Black, St\'ephane Ducasse, Oscar Nierstrasz e Damien Pollet.\\[1cm]
+
+O conteúdo deste livro é protegido sob licença Creative Commons Attribution-ShareAlike 3.0 Unported.
+
+\emph{Você é livre:}
+\begin{description}
+  \item[para Compartilhar] \,---\, copiar, distribuir e transmitir este trabalho
+  \item[para Editar] \,---\, adaptar este trabalho
+\end{description}
+\emph{Sob as seguintes condições:}
+\begin{description}
+  \item[Atribuição.] Você precisa atribuir o trabalho da maneira especificada pelo autor ou licenciador (mas não de uma forma que sugira que ele endorsa você ou seu uso do trabalho).
+  \item[Compartilhe nos mesmos moldes.] Se você alterar, transformar, ou construir sobre este trabalho, você deve distribuir o trabalho resultante somente sobre a mesma, ou semelhante, ou compatível licença.
+\end{description}
+\begin{itemize}
+  \item Para qualquer reuso ou distribuição, você precisa tornar claro para os outros os termos da licença deste trabalho. A melhor forma de fazê-lo é com um link para esta página web:
+  \url{creativecommons.org/licenses/by-sa/3.0/}
+  \item Qualquer das condições acima podem ser renunciadas se você receber autorização dos detentores dos direitos autorais.
+  \item Nada nesta licença limita ou restringe os direitos morais dos autores.
+\end{itemize}
+\raisebox{-0.25cm}{\includegraphics[width=2cm]{CreativeCommons-BY-SA}}\quad
+\parbox{\textwidth-2cm-1em}{
+	Seu acordo legal e outros direitos são de nenhuma forma afetados pelo acima.\\
+	Este é um sumário legível-amigável do Código Legal (a licença completa):\\
+	\url{creativecommons.org/licenses/by-sa/3.0/legalcode}}\\[1cm]
+Publicado por Square Bracket Associados, Suíça. \sba\\
+% ISBN 978-3-9523341-0-2\\
+% First Edition, September, 2007. Revised editions with corrections, March 2008, May 2008.
+Edição Especial Omnibus, Setembro 2009
+\end{footnotesize}
+\vfill
+%=================================================================
+%\bibliographystyle{jurabib}
+%\end{document}
+%=================================================================
+\tableofcontents
+% \listoffigures
+% \listoftables
+% \lstlistoflistings
+\sloppy % To avoid LaTeX's annoying habit of letting lines stick over the margins!
+%=================================================================
+\input{Preface/Preface.tex}
+\input{Preface/Preface-Omnibus.tex}
+\mainmatter
+%=================================================================
+\part{Getting Started}
+\input{QuickTour/QuickTour.tex}
+\input{FirstApp/FirstApp.tex}
+\input{Syntax/Syntax.tex}
+\input{Messages/Messages.tex}
+%=================================================================
+\part{Developing in Pharo}
+\input{Model/Model.tex}
+\input{Environment/Environment.tex}
+\input{SUnit/SUnit.tex}
+\input{BasicClasses/BasicClasses.tex}
+\input{Collections/Collections.tex}
+\input{Streams/Streams.tex}
+\input{Morphic/Morphic.tex}
+%=================================================================
+\part{Advanced Pharo}
+\input{Metaclasses/Metaclasses.tex}
+
+%=================================================================
+\part{Software Development}
+\input{Monticello/Monticello.tex}
+%\input{Debugging/Debugging.tex}
+%\input{Profiling/Profiling.tex}
+%\input{Installer/Installer.tex}
+
+\part{Frameworks}
+\input{Seaside/Seaside.tex}
+%\input{Magma/Magma.tex}
+\input{Regex/Regex.tex}
+\input{Omnibrowser/Omnibrowser.tex}
+
+\part{Language details}
+\input{Exceptions/Exceptions.tex}
+%\input{Concurrency/Concurrency.tex}
+%\input{Announcements/Announcements.tex}
+\input{Reflection/Reflection.tex}
+%=================================================================
+
+\appendix
+\part{Appendices}
+\input{FAQ/FAQ.tex}
+%=================================================================
+% \printglossary
+\bibliographystyle{jurabib}
+\bibliography{scg}
+%=================================================================
+{\small\raggedright\printindex}
+%=================================================================
+% Round out to multiple of 4 pages
+% NB: we *must* have some blank pages at the end
+\pagestyle{empty}
+\cleardoublepage
+~ % Force some space
+\cleardoublepage
+~ % Force some space
+\cleardoublepage
+%=================================================================
+\end{document}
+%=================================================================
